@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Typen</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/src/parsley.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+
+<h2>HTML Input Typen – mit Parsley Validierung</h2>
+
+<form id="formData">
+    <label>Text: <input type="text" required data-parsley-length="[2,40]" placeholder="Vorname"></label>
+    <label>Passwort: <input type="password" required data-parsley-minlength="6" placeholder="Passwort"></label>
+    <label>Email: <input type="email" required data-parsley-type="email" placeholder="mail@example.com"></label>
+    <label>Telefon: <input type="tel" required data-parsley-pattern="^\+?[0-9\s\-]{7,20}$" placeholder="+43 660 1234567"></label>
+    <label>URL: <input type="url" required data-parsley-type="url" placeholder="https://seite.at"></label>
+    <label>Nummer: <input type="number" required data-parsley-range="[1,100]" placeholder="1–100"></label>
+    <label>Datum: <input type="date" required></label>
+    <label>Zeit: <input type="time" required></label>
+    <label>Datum & Zeit (lokal): <input type="datetime-local" required></label>
+    <label>Woche: <input type="week" required></label>
+    <label>Monat: <input type="month" required></label>
+    <label>Farbe: <input type="color" required></label>
+    <label>Datei: <input type="file" required data-parsley-filemaxsize="2" data-parsley-filemimetypes="image/png, image/jpeg"></label>
+    <label>Checkbox: <input type="checkbox" required> Akzeptiere Bedingungen</label>
+    <label>Radio:
+        <input type="radio" name="gender" required value="m"> M
+        <input type="radio" name="gender" value="f"> F
+    </label>
+    <label>Bereich: <input type="range" min="0" max="100" required></label>
+    <label>Suche: <input type="search" required placeholder="Suchbegriff"></label>
+    <label>Versteckt (hidden): <input type="hidden" name="id" value="12345"></label>
+    <label>Button: <input type="button" value="Klick mich"></label>
+    <label>Reset: <input type="reset" value="Zurücksetzen"></label>
+    <label>Submit: <input type="submit" value="Absenden"></label>
+</form>
+
+<section id="result"></section>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.3/dist/purify.min.js"></script>
+
+<script src="../JS/index.js"></script>
+</body>
+</html>
